@@ -11,3 +11,11 @@ class CsvToData(object):
 
     def get_data_address(addr_name, data):
         return data[addr_name]
+
+    def list_to_series(data):
+        return pd.Series(data)
+
+    def add_series_to_data(data, longitude, latitude):
+        data["longitude"] = longitude
+        data["latitude"] = latitude
+        data.write_csv("data.csv")
